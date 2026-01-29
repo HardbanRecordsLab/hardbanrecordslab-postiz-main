@@ -4,7 +4,12 @@
 dist
 tmp
 /out-tsc
-.env
+.env*
+.env.local
+.env.development
+.env.test
+.env.production
+.env.hf
 # dependencies
 node_modules
 
@@ -58,3 +63,9 @@ Thumbs.db
 .secrets/
 libraries/plugins/src/plugins.ts
 i18n.cache
+
+# Development/Local files
+SETUP_ACCOUNTS.md
+GITHUB_REPO_SETUP.md
+FIX_GITHUB_AUTH.md
+postiz_analysis.md
