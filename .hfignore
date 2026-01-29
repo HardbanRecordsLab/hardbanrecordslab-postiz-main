@@ -1,0 +1,61 @@
+# Hugging Face ignore file
+# Exclude these from upload to save space and time
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+reports/
+.nyc_output/
+
+# Build artifacts (will be rebuilt in HF)
+dist/
+build/
+.next/
+*.tsbuildinfo
+
+# Local env files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Git
+.git/
+.gitignore
+
+# Docker (not needed in HF)
+docker-compose*.yaml
+Dockerfile
+Dockerfile.dev
+.dockerignore
+
+# Temp files
+tmp/
+temp/
+*.tmp
+
+# Var directory
+var/
