@@ -1,3 +1,14 @@
+---
+title: HardbanRecordsLab-social-planner
+emoji: 🚀
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_port: 7860
+license: agpl-3.0
+short_description: Self-hosted social media scheduling platform for HardbanRecordsLab
+---
+
 <p align="center">
   <a href="https://postiz.com/" target="_blank">
   <picture>
