@@ -37,10 +37,10 @@ Gotowe pliki do wdrożenia Postiz na Hugging Face Spaces PRO ($9/miesiąc).
 
 1. Idź na https://huggingface.co/spaces
 2. Create new Space:
-   - Name: `postiz-app`
-   - SDK: **Docker**
-   - Hardware: **Persistent** → Upgrade to **PRO** 
-3. Zapisz URL przestrzeni
+   - Name: `HardbanRecordsLab-social-planner`
+   - SDK: **Docker** (Blank)
+   - Hardware: **CPU Basic** (wymaga opłaty $0.01/h dla trybu 24/7)
+3. Po utworzeniu wejdź w **Settings** -> **Space Hardware** i wybierz **Upgrade** (aby uniknąć usypiania aplikacji).
 
 ### 3. Przygotuj Pliki
 
@@ -70,8 +70,8 @@ cp Dockerfile.hf Dockerfile
 
 **Opcja A: Git Push**
 ```bash
-git clone https://huggingface.co/spaces/YOUR_USERNAME/postiz-app
-cd postiz-app
+git clone https://huggingface.co/spaces/YOUR_USERNAME/HardbanRecordsLab-social-planner
+cd HardbanRecordsLab-social-planner
 cp -r /path/to/postiz-app-main/* .
 git add .
 git commit -m "Deploy Postiz"
@@ -87,7 +87,7 @@ git push
 Po deployu:
 1. Space → App → Sprawdź logi
 2. Poczekaj ~5 minut na build
-3. Aplikacja powinna być dostępna na: `https://your-username-postiz-app.hf.space`
+3. Aplikacja powinna być dostępna na: `https://your-username-HardbanRecordsLab-social-planner.hf.space`
 
 ## 🐛 Troubleshooting
 
@@ -107,15 +107,18 @@ Po deployu:
 - **.hfignore** - Wyklucza niepotrzebne pliki z uploadu
 - **.env.hf.example** - Szablon zmiennych środowiskowych
 
-## 💰 Koszty
+## 💰 Koszty (Szacunkowe)
 
-| Serwis | Koszt |
-|--------|-------|
-| HF PRO | $9/m |
-| Neon PostgreSQL | $0 (free tier) |
-| Upstash Redis | $0 (free tier) |
-| Cloudflare R2 | $0 (free 10GB) |
-| **TOTAL** | **$9/m** |
+| Serwis | Koszt stały | Koszt zmienny (estymacja) |
+|--------|-------------|----------------------------|
+| **HF PRO Subscription** | $9/miesiąc | - |
+| **HF Space Hardware** (CPU Basic) | - | ~$7.30/miesiąc ($0.01/h) |
+| **Neon PostgreSQL** | $0 | $0 (Free Tier) |
+| **Upstash Redis** | $0 | $0 (Free Tier) |
+| **Cloudflare R2** | $0 | $0 (Free Tier do 10GB) |
+| **RAZEM** | **$9/m** | **+ ok. $7.30/m za sprzęt** |
+
+**Łączny koszt utrzymania 24/7: ok. $16 - $17/miesiąc.**
 
 ## 🔗 Pomocne Linki
 

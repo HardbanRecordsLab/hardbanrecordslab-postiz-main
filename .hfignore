@@ -23,6 +23,7 @@ build/
 .env.development
 .env.test
 .env.production
+.env.hf
 
 # Logs
 *.log
