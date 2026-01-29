@@ -1,0 +1,30 @@
+name: Neon Database Branching
+# Automates database branching in Neon for every Pull Request
+# Documentation: https://neon.tech/docs/guides/github-actions
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronized, closed]
+
+jobs:
+  neon-database-branching:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Neon Branch
+        if: github.event.action != 'closed'
+        id: create-branch
+        uses: neondatabase/create-branch-action@v5
+        with:
+          project_id: ${{ vars.NEON_PROJECT_ID }}
+          api_key: ${{ secrets.NEON_API_KEY }}
+          branch_name: preview/pr-${{ github.event.number }}
+          # The action will produce DATABASE_URL as an output
+
+      - name: Delete Neon Branch
+        if: github.event.action == 'closed'
+        uses: neondatabase/create-branch-action@v5
+        with:
+          project_id: ${{ vars.NEON_PROJECT_ID }}
+          api_key: ${{ secrets.NEON_API_KEY }}
+          branch_name: preview/pr-${{ github.event.number }}
+          action: delete
